@@ -1,0 +1,16 @@
+---
+- name: Installeren Apache2 zonder apt module
+  hosts: all
+  become: yes
+  tasks:
+
+    - name: installeren Apache2 met shell
+      shell: "apt-get install -y apache2"
+      register: install_results
+      changed_when: "'is already the newest version' not in install_result.stdout"
+      failed_when: install_result.rc != 0
+    
+    - name: Error uitspuwen
+      shell: "exit 1"
+      register: error_result
+      failed_when: true
