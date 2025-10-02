@@ -37,3 +37,4 @@ resource "esxi_guest" "testserver1" {
   }
 }
 
+#test
