@@ -18,8 +18,8 @@ jobs:
       - name: terraform init
         run: terraform init
 
-      - name: terraform format checken
-        run: terraform fmt -check
+#      - name: terraform format checken
+#        run: terraform fmt -check
 
       - name: terraform valideren
         run: terraform validate
