@@ -1,0 +1,31 @@
+name: terraform Deploy
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - main.tf
+
+jobs:
+  terraform-deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: terraform init
+        run: terraform init
+
+      - name: terraform format checken
+        run: terraform fmt -check
+
+      - name: terraform valideren
+        run: terraform validate
+
+      - name: terraform plan
+        run: terraform plan
+
+      - name: terraform apply
+        run: terraform apply -auto-approve
