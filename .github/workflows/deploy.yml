@@ -16,4 +16,5 @@ jobs:
         run: ansible-playbook playbooks/opdracht2_test.yml --syntax-check
 
       - name: Voer ansible-playbook uit
-        run: ansible-playbook playbooks/opdracht2_test.yml inventory.ini
+        run: ansible-playbook -i inventory.ini playbooks/opdracht2_test.yml
+
