@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Controleer ansible syntax
-        run: ansible-playbook ansible/install_nginx.yml --syntax-check
+        run: ansible-playbook playbooks/opdracht2_test.yml --syntax-check
 
       - name: Voer ansible-playbook uit
-        run: ansible-playbook ansible/install_nginx.yml --connection=local
+        run: ansible-playbook playbooks/opdracht2_test.yml --connection=local
