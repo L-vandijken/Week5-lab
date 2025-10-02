@@ -5,7 +5,8 @@ on:
     branches:
       - main
     paths:
-      - main.tf
+      - '*.tf'
+      - inventory.ini
 
 jobs:
   terraform-deploy:
