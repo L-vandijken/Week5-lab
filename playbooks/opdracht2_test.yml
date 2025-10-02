@@ -1,5 +1,5 @@
 ---
-- name: Installeer NGINX via shell #aanpassing
+- name: Installeer NGINX via shell 
   hosts: all
   become: yes
   tasks:
