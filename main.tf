@@ -36,5 +36,3 @@ resource "esxi_guest" "testserver1" {
     command = "echo ${self.ip_address} testserver1 >> vm_ips.txt"
   }
 }
-
-#test
