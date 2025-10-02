@@ -1,0 +1,19 @@
+name: CI/CD ansible deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ansible-deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Controleer ansible syntax
+        run: ansible-playbook ansible/install_nginx.yml --syntax-check
+
+      - name: Voer ansible-playbook uit
+        run: ansible-playbook ansible/install_nginx.yml --connection=local
